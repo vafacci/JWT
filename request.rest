@@ -1,0 +1,33 @@
+### 1) Login – få accessToken + refreshToken
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "username": "Kyle"
+}
+
+###
+
+### 2) Hent posts (sæt accessToken ind efter "Bearer ")
+GET http://localhost:3000/posts
+Authorization: Bearer PASTE_ACCESS_TOKEN_HER
+
+###
+
+### 3) Refresh – få nyt accessToken (når det gamle er udløbet)
+POST http://localhost:4000/token
+Content-Type: application/json
+
+{
+  "token": "PASTE_REFRESH_TOKEN_HER"
+}
+
+###
+
+### 4) Logout – slet refresh token
+DELETE http://localhost:4000/logout
+Content-Type: application/json
+
+{
+  "token": "PASTE_REFRESH_TOKEN_HER"
+}
